@@ -4,6 +4,7 @@ const httpStatus = require('http-status');
 const config = require('./config/config');
 const routes = require('./routes');
 const { errorConverter, errorHandler } = require('./middlewares/error');
+const { authLimiter } = require('./middlewares/rateLimiter');
 const ApiError = require('./utils/ApiError');
 const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
