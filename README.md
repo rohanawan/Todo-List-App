@@ -53,12 +53,14 @@ yarn docker:test
 
 The environment variables can be found and modified in the `.env` file. They come with these default values:
 
+For Backend:
+
 ```bash
 # Port number
 PORT=3000
 
 # URL of the Mongo DB
-MONGODB_URL=mongodb://127.0.0.1:27017/node-boilerplate
+MONGODB_URL=mongodb://127.0.0.1:27017
 
 # JWT
 # JWT secret key
@@ -75,6 +77,11 @@ SMTP_PORT=587
 SMTP_USERNAME=email-server-username
 SMTP_PASSWORD=email-server-password
 EMAIL_FROM=support@yourapp.com
+```
+
+For FrontEnd
+```
+REACT_APP_BACKEND_URL='your_backend_url'
 ```
 
 ## Project Structure
