@@ -2,28 +2,28 @@ import React, { useEffect, useState } from 'react'
 import moment from 'moment'
 import { toast } from 'react-toastify'
 import { Row, Col, Button, Form, InputGroup } from 'react-bootstrap'
-import TaskService from '../../../services/TaskService'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faBars, faTrash } from '@fortawesome/fontawesome-free-solid'
+import TaskService from '../../../services/TaskService'
 import Navbar from '../../../components/navbar'
 
 const Dashboard = () => {
   // initializing state
   const [text, setText] = useState('')
-  const [showList, setshowList] = useState(false)
+  const [showList, setShowList] = useState(false)
   const [listData, setListData] = useState([])
   const [todoItems, setTodoItems] = useState([])
-
+  const currentTime = moment().format('DD/MM/YYYY hh:mm a')
   // show list function
-  const showTask = () => setshowList(!showList)
+  const showTask = () => setShowList(!showList)
 
   // checking if task is complete and updating it to completed
   const handleTask = async (id) => {
-    setshowList(false)
+    setShowList(false)
     const match = listData.find((task) => task.id === id)
-    if (!match.status) {
+    if (!match?.status) {
       match.status = 'completed'
-      match.completionDate = moment().format('DD/MM/YYYY hh:mm a')
+      match.completionDate = currentTime
       const response = await TaskService.update({ id, match })
       if (response) {
         toast.info(`${response.task.toUpperCase()} is completed`, {
@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   // Adding task with creation Time
   const addTask = async () => {
-    const creationDate = moment().format('DD/MM/YYYY hh:mm a')
+    const creationDate = currentTime
     const data = {
       task: text,
       creationDate
@@ -126,7 +126,7 @@ const Dashboard = () => {
                 {showList && (
                     <div className='selectable-menu'>
                     <ul className='ul-border'>
-                        {listData.map((item, index) => (
+                        {listData?.map((item, index) => (
                         <li className='menu-item' key={index}>
                             <span className="menu-items d-flex">
                             <label className='label'>
@@ -154,7 +154,7 @@ const Dashboard = () => {
                             <Row className='d-flex justify-content-evenly'>
                             <Col lg={4} className='d-flex justify-content-start pl'>
                                 <p className='font'>
-                                <strong>Creation Time: {moment(item?.creationDate).format('DD-MM-YYYY -  hh:mm a')}</strong>
+                                <strong>Creation Time: {moment(item.creationDate).format('DD-MM-YYYY -  hh:mm a')}</strong>
                                 </p>
                             </Col>
                             <Col lg={4}>
