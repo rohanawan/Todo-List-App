@@ -1,5 +1,6 @@
-import AllRoutes from "./routes";
+import React from 'react'
+import AllRoutes from './routes'
 
 const App = () => <AllRoutes/>
 
-export default App;
+export default App
