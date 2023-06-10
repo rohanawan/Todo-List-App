@@ -15,7 +15,7 @@ const getTasks = catchAsync(async (req, res) => {
 const updateTask = catchAsync(async (req, res) => {
   const result = await taskService.updateTaskById(req.params.id, req.body);
   res.send(result);
-  });
+});
 
 const deleteTask = catchAsync(async (req, res) => {
   const response = await taskService.deleteTaskById(req.params.id);
@@ -23,8 +23,8 @@ const deleteTask = catchAsync(async (req, res) => {
 });
 
 module.exports = {
-    createTask, 
-    getTasks, 
-    deleteTask, 
-    updateTask
+  createTask,
+  getTasks,
+  deleteTask,
+  updateTask,
 };

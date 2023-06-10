@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const httpStatus = require('http-status');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
 const config = require('./config/config');
 const routes = require('./routes');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const { authLimiter } = require('./middlewares/rateLimiter');
 const ApiError = require('./utils/ApiError');
-const xss = require('xss-clean');
-const mongoSanitize = require('express-mongo-sanitize');
 
 const app = express();
 
