@@ -1,3 +1,10 @@
+## TODO LIST BACKEND
+
+Prerequisite
+
+1- Create a .env file in the root directory and copy everything from .env.example file and paste it inside .env file.
+2- Replace the values with your desired values in the .env file.
+
 ## Quick Start
 
 To run a project, simply run:
@@ -32,21 +39,6 @@ Running in production:
 
 ```bash
 yarn start
-```
-
-## Docker
-
-Docker:
-
-```bash
-# run docker container in development mode
-yarn docker:dev
-
-# run docker container in production mode
-yarn docker:prod
-
-# run all tests in a docker container
-yarn docker:test
 ```
 
 ## Environment Variables

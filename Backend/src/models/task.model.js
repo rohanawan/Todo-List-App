@@ -5,18 +5,18 @@ const taskSchema = mongoose.Schema(
   {
     task: {
       type: String,
-      required: true
+      required: true,
     },
-    status:{
-        type: String,
+    status: {
+      type: String,
     },
-    creationDate:{
-        type: Date,
-        required: true
-    },
-    completionDate:{
+    creationDate: {
       type: Date,
-    }
+      required: true,
+    },
+    completionDate: {
+      type: Date,
+    },
   },
   {
     timestamps: true,
