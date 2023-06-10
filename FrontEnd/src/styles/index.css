@@ -33,7 +33,7 @@ body, html {
 }
 .navbar{
     background-color: #5f4200ad !important;
-    height: 80px !important;
+    height: 65px !important;
 }
 .main-label{
     padding: 0px !important;
@@ -128,6 +128,21 @@ ul li.completed a:after {
     position: relative;
     flex-grow: 1;
     padding: 13px 45px 10px 0px;
+}
+
+.task {
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    margin-left: 25px;
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    padding: 13px 45px 10px 0px;
+}
+
+.task {
+    line-height: 20px;
 }
 
 .selectable-menu a:link {
