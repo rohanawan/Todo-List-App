@@ -4,12 +4,12 @@ const ApiError = require('../utils/ApiError');
 
 const getDataByTask = async (body) => Task.findOne({ task: body });
 
-const createTask = async (userBody) => {
-  const task = await getDataByTask(userBody.task);
+const createTask = async (taskBody) => {
+  const task = await getDataByTask(taskBody.task);
   if (task) {
     throw new ApiError(httpStatus.CONFLICT, 'Task Already Exists');
   }
-  return Task.create(userBody);
+  return Task.create(taskBody);
 };
 
 const getTasks = async () => Task.find();
@@ -29,7 +29,7 @@ const updateTaskById = async (id, updateBody) => {
 const deleteTaskById = async (id) => {
   const task = await getTaskById(id);
   if (!task) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+    throw new ApiError(httpStatus.NOT_FOUND, 'Task not found');
   }
   await task.remove();
   return task;

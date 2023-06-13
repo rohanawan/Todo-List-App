@@ -2,7 +2,7 @@
 
 Prerequisite
 
-1- Create a .env file in the root directory and copy everything from .env.example file and paste it inside .env file.
+1- Create a .env file in the root directory of Frontend and Backend copy everything from .env.example file and paste it inside .env file.For Frontend you just have to put 'REACT_APP_API_URL=http://localhost:5000'
 
 2- Replace the values with your desired values in the .env file.
 
@@ -16,6 +16,8 @@ To install dependencies on both side
 npm install 
 ```
 
+## Commands
+
 To run project
 
 For BackEnd
@@ -28,18 +30,14 @@ For FrontEnd
 npm start 
 ```
 
-## Commands
-
-Running locally:
-
+For Backend Tests
 ```bash
-yarn dev
+npm run test:watch
 ```
 
-Running in production:
-
+For Backend Tests Coverage
 ```bash
-yarn start
+npm run coverage 
 ```
 
 ## Environment Variables
@@ -83,11 +81,13 @@ Backend
 ```
 src\
  |--config\         # Environment variables and configuration related things
+ |--middlewares\    # Middlewares
  |--controllers\    # Route controllers (controller layer)
  |--models\         # Mongoose models (data layer)
  |--routes\         # Routes
  |--services\       # Business logic (service layer)
  |--utils\          # Utility classes and functions
+ |--tests\          # Unit Tests
  |--app.js          # Express app
  |--index.js        # App entry point
 ```
@@ -100,6 +100,7 @@ src\
  |--interceptos\    # Api Handling
  |--routes\         # App Routes files
  |--styles\         # Css styling Files
+ |--services\       # Api Services
  |--Views\          # App views File
  |--app.js          # React app
  |--index.js        # App entry point
