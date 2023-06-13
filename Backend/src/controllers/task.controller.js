@@ -13,7 +13,6 @@ const getTasks = catchAsync(async (req, res) => {
 });
 
 const updateTask = catchAsync(async (req, res) => {
-  console.log(req.params.id)
   const result = await taskService.updateTaskById(req.params.id, req.body);
   res.send(result);
 });
