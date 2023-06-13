@@ -13,14 +13,14 @@ const Dashboard = () => {
   const [showList, setShowList] = useState(false)
   const [listData, setListData] = useState([])
   const [todoItems, setTodoItems] = useState([])
-  const currentTime = moment().format('DD/MM/YYYY hh:mm a')
+  const currentTime = moment().toDate()
   // show list function
   const showTask = () => setShowList(!showList)
 
   // checking if task is complete and updating it to completed
   const handleTask = async (id) => {
     setShowList(false)
-    const match = listData.find((task) => task.id === id)
+    const match = listData.find((task) => task._id === id)
     if (!match?.status) {
       match.status = 'completed'
       match.completionDate = currentTime
@@ -133,13 +133,7 @@ const Dashboard = () => {
                                 <input
                                 type="checkbox"
                                 className='checkbox'
-                                onChange={() => handleTask(item.id)}
-                                checked={item.status === 'completed'}
-                                />
-                                <input
-                                type="checkbox"
-                                className='checkbox'
-                                onChange={() => handleTask(item.id)}
+                                onChange={() => handleTask(item._id)}
                                 checked={item.status === 'completed'}
                                 />
                                 <span className="checkmark"></span>
@@ -147,7 +141,7 @@ const Dashboard = () => {
                             <div className='task'>{item.task}</div>
                             <FontAwesomeIcon
                                 className='duotone-trash'
-                                onClick={() => deleteTask(item.id)}
+                                onClick={() => deleteTask(item._id)}
                                 icon={faTrash}
                             />
                             </span>
