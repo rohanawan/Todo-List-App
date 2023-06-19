@@ -53,21 +53,6 @@ PORT=3000
 # URL of the Mongo DB
 MONGODB_URL=mongodb://127.0.0.1:27017
 
-# JWT
-# JWT secret key
-JWT_SECRET=thisisasamplesecret
-# Number of minutes after which an access token expires
-JWT_ACCESS_EXPIRATION_MINUTES=30
-# Number of days after which a refresh token expires
-JWT_REFRESH_EXPIRATION_DAYS=30
-
-# SMTP configuration options for the email service
-# For testing, you can use a fake SMTP service like Ethereal: https://ethereal.email/create
-SMTP_HOST=email-server
-SMTP_PORT=587
-SMTP_USERNAME=email-server-username
-SMTP_PASSWORD=email-server-password
-EMAIL_FROM=support@yourapp.com
 ```
 
 For FrontEnd
@@ -87,7 +72,7 @@ src\
  |--routes\         # Routes
  |--services\       # Business logic (service layer)
  |--utils\          # Utility classes and functions
- |--tests\          # Unit Tests
+ |--tests\          # Unit and Integration Tests
  |--app.js          # Express app
  |--index.js        # App entry point
 ```
