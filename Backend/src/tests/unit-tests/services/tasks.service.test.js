@@ -1,14 +1,14 @@
 const httpStatus = require('http-status');
-const { Task } = require('../../models');
-const { createTask, getTasks, updateTaskById, deleteTaskById } = require('../../services/task.service');
-const { taskData } = require('../fixtures/tasks');
-const ApiError = require('../../utils/ApiError');
+const { Task } = require('../../../models');
+const { createTask, getTasks, updateTaskById, deleteTaskById } = require('../../../services/task.service');
+const { taskData } = require('../../fixtures/tasks');
+const ApiError = require('../../../utils/ApiError');
 
-jest.mock('../../models');
+jest.mock('../../../models');
 
 describe('Task Service', () => {
   describe('createTask', () => {
-    it('should create a new task', async () => {
+    test('should create a new task', async () => {
       const taskName = 'Gym';
 
       const taskBody = {
@@ -25,7 +25,7 @@ describe('Task Service', () => {
       expect(result).toEqual(taskBody);
     });
 
-    it('should throw an error if task already exists', async () => {
+    test('should throw an error if task already exists', async () => {
       const taskBody = {
         task: 'Existing Task',
       };
@@ -37,7 +37,7 @@ describe('Task Service', () => {
   });
 
   describe('getTasks', () => {
-    it('should retrieve all tasks', async () => {
+    test('should retrieve all tasks', async () => {
       const findTasks = Task.find.mockResolvedValue(taskData);
 
       const result = await getTasks();
@@ -48,7 +48,7 @@ describe('Task Service', () => {
   });
 
   describe('updateTaskById', () => {
-    it('should update a task by ID', async () => {
+    test('should update a task by ID', async () => {
       const taskId = 'task_id';
       const taskTitle = 'Existing Task';
       const updateTask = 'Update Task';
@@ -76,7 +76,7 @@ describe('Task Service', () => {
       expect(result).toEqual(expect.objectContaining(updatedTask));
     });
 
-    it('should throw an error if task is not found', async () => {
+    test('should throw an error if task is not found', async () => {
       const taskId = 'non-existent-id';
       Task.findById.mockResolvedValue(null);
 
@@ -85,7 +85,7 @@ describe('Task Service', () => {
   });
 
   describe('deleteTaskById', () => {
-    it('should delete a task by ID', async () => {
+    test('should delete a task by ID', async () => {
       const taskId = 'task_id';
 
       const existingTask = {
@@ -103,7 +103,7 @@ describe('Task Service', () => {
       expect(result).toEqual(existingTask);
     });
 
-    it('should throw an error if task is not found', async () => {
+    test('should throw an error if task is not found', async () => {
       const taskId = 'non-existent-id';
       Task.findById.mockResolvedValue(null);
 

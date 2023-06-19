@@ -19,7 +19,6 @@ const Dashboard = () => {
 
   // checking if task is complete and updating it to completed
   const handleTask = async (id) => {
-    setShowList(false)
     const match = listData.find((task) => task._id === id)
     if (!match?.status) {
       match.status = 'completed'
@@ -105,7 +104,7 @@ const Dashboard = () => {
                     </InputGroup.Text>
 
                     <Form.Control
-                        placeholder="To do Today"
+                        placeholder="Enter your tasks here..."
                         className='input'
                         value={text}
                         onChange={(e) => setText(e.target.value)}

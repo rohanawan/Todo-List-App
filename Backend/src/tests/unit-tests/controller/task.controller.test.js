@@ -1,7 +1,7 @@
 const httpStatus = require('http-status');
-const { createTask, getTasks, deleteTask, updateTask } = require('../../controllers/task.controller');
+const { createTask, getTasks, deleteTask, updateTask } = require('../../../controllers/task.controller');
 
-jest.mock('../../services/task.service');
+jest.mock('../../../services/task.service');
 
 describe('Task Controller', () => {
   describe('createTask', () => {

@@ -1,4 +1,4 @@
-const { Task } = require('../../models');
+const { Task } = require('../../../models');
 
 describe('Task model', () => {
   describe('schema', () => {

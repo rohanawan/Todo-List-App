@@ -1,7 +1,7 @@
 {
   "name": "todo-backend",
   "version": "1.7.0",
-  "description": "Node.js app for building RESTFul APIs using Express, by running one command",
+  "description": "Node.js app",
   "main": "src/index.js",
   "repository": "https://github.com/rohanawan/Todo-List-App",
   "author": "Rohan Ilyas",
@@ -36,8 +36,6 @@
     "es8",
     "es9",
     "jest",
-    "travis",
-    "passport",
     "docker",
     "joi",
     "eslint",
@@ -49,17 +47,12 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^6.6.0",
-    "helmet": "^6.0.0",
     "http-status": "^1.5.3",
     "joi": "^17.6.1",
     "mongoose": "^6.6.2",
     "morgan": "^1.10.0",
     "pm2": "^5.2.0",
-    "validator": "^13.7.0",
-    "winston": "^3.8.2",
-    "xss-clean": "^0.1.1"
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "eslint": "^8.24.0",
